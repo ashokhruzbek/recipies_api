@@ -9,8 +9,8 @@ const Header = () => {
     <div className='logo'>Meals</div>
     <ul className='nav-links'>
         <li><NavLink to='/' className={({ isActive }) => isActive ? 'active_link' : ''}>Home</NavLink></li>
-        <li><NavLink to='/cuisine'>Cuisine</NavLink></li>
-        <li><NavLink to='/category'>Category</NavLink></li>
+        <li><NavLink to='/cuisine' className={({ isActive }) => isActive ? 'active_link' : ''} >Cuisine</NavLink></li>
+        <li><NavLink to='/category' className={({ isActive }) => isActive ? 'active_link' : ''} >Category</NavLink></li>
     </ul>
 </div>
 

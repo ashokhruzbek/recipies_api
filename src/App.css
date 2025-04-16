@@ -4,74 +4,47 @@
   --color-accent: #2D4356;
   --color-text: #89AAC3;
   --color-white: #ffffff;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.473);
+  --transition: all 0.4s ease;
+  --radius: 12px;
 }
-*{
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-
-
-
-
-
-body{
-  background-color:rgb(228, 227, 227) ;
-}
-.category-cards{
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-.category-card{
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  background-color: white;
-  border-radius: 5px;
-}
-.active_link{
-  background-color: orange;
-}
-.cuisine_cards {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
+body {
+  background-color: #f4f5f7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-text);
+  line-height: 1.6;
 }
 
-.cuisine_card {
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  background-color: aliceblue;
-  color: rgb(0, 0, 162);
-  border-radius: 5px;
-  cursor: pointer;
-}
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: aliceblue;
-  padding: 15px 20px;
-  margin-bottom: 20px;
+  background-color: var(--color-white);
+  padding: 30px 40px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .logo {
-  color: rgb(0, 0, 162);
-  font-size: 20px;
+  color: var(--color-primary);
+  font-size: 24px;
   font-weight: bold;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 
 .nav-links li {
@@ -79,15 +52,74 @@ body{
 }
 
 .nav-links a {
-  color: rgb(0, 0, 162);
+  color: var(--color-primary);
   text-decoration: none;
   font-size: 18px;
-  transition: 0.3s;
-  font-weight: bolder;
+  font-weight: 600;
+  transition: var(--transition);
 }
 
 .nav-links a:hover {
-  color: #ffcc00;
+  color: var(--color-accent);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* ACTIVE LINK */
+.active_link {
+  /* background-color: orange; */
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-primary);
+}
 
+/* CATEGORY CARDS */
+.category-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+}
+
+.category-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  width: 380px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--color-accent);
+}
+
+/* CUISINE CARDS */
+.cuisine_cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+}
+
+.cuisine_card {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  width: 300px;
+  padding: 25px;
+  text-align: center;
+  color: var(--color-primary);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cuisine_card:hover {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  transform: scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
