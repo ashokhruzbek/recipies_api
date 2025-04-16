@@ -6,22 +6,32 @@ import RecipesCard from '../components/RecipesCard';
 function Recipes() {
   const [recipes, setRecipes] = useState([]);
   const { foodname } = useParams();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const getData = async () => {
-      const res = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${foodname}`);
-
-      if (res.data.meals) {
+    try {
+      const getData = async () => {
+        const res = await axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${foodname}`);
         setRecipes(res.data.meals);
-      } else {
-        setRecipes([]);
+        console.log(res.data.meals);
       }
+      getData();
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false); 
+    }
 
-      console.log(res.data);
-    };
+  }, []);
 
-    getData();
-  }, [foodname]);
+  if (loading) {
+    return (
+        <div className="loading-spinner">
+            <div className="spinner" />
+            <p>Loading categories...</p>
+        </div>
+    );
+}
 
   return (
     <div>

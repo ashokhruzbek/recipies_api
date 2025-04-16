@@ -22,6 +22,7 @@ function CuisineFood() {
     } finally {
       setLoading(false); 
   }
+  }, [])
   if (loading) {
     return (
         <div className="loading-spinner">
@@ -31,8 +32,6 @@ function CuisineFood() {
     );
 }
 
-
-  }, [])
 
   return (
     <div className='cuisineFood-cards' >
