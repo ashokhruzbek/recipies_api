@@ -1,4 +1,5 @@
 import React from 'react';
+import '../components/RecipesCard.css'
 
 function RecipesCard({ meal }) {
     if (!meal) return <p>Loading...</p>;  // Loading message
