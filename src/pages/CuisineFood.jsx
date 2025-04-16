@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useNavigate, useParams } from 'react-router-dom'
 function CuisineFood() {
   const [cuisineFoods, setCuisineFoods] = useState(null)
+  const [loading, setLoading] = useState(true); 
   const navigate = useNavigate();
   const { cuisineName } = useParams()
   console.log(cuisineName);
@@ -18,8 +19,17 @@ function CuisineFood() {
       info();
     } catch (error) {
       console.log(error);
-
-    }
+    } finally {
+      setLoading(false); 
+  }
+  if (loading) {
+    return (
+        <div className="loading-spinner">
+            <div className="spinner" />
+            <p>Loading categories...</p>
+        </div>
+    );
+}
 
 
   }, [])

@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import "../App.css"
 function Category() {
-    // if (!categor || categor.length === 0) {
-    //     return <p className='loading'>Loading...</p>;
-    //   }
     const [categories, setCategories] = useState();
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         try {
             const info = async () => {
@@ -16,8 +14,19 @@ function Category() {
             info();
         } catch (error) {
             console.log(error);
+        } finally {
+            setLoading(false); 
         }
     }, [])
+
+    if (loading) {
+        return (
+            <div className="loading-spinner">
+                <div className="spinner" />
+                <p>Loading categories...</p>
+            </div>
+        );
+    }
 
     return (
         <div className='category-cards' >
