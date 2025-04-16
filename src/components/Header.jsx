@@ -1,19 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../assets/logo1.svg'
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
-function Header() {
+const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="header">
-      <div className="container">
-        <Link to="/" className="logo"><img  className='logo' src={logo} alt="" /></Link>
-        <nav className="nav">
-          <Link to="/cuisine" className="nav-link">Cuisine</Link>
-          <Link to="/" className="nav-link">Category</Link>
-        </nav>
-      </div>
-    </header>
+    <div className='navbar'>
+    <div className='logo'>Meals</div>
+    <ul className='nav-links'>
+        <li><NavLink to='/' className={({ isActive }) => isActive ? 'active_link' : ''}>Home</NavLink></li>
+        <li><NavLink to='/cuisine'>Cuisine</NavLink></li>
+        <li><NavLink to='/category'>Category</NavLink></li>
+    </ul>
+</div>
+
   );
-}
+};
 
 export default Header;

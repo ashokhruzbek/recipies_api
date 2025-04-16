@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
 
 function Cuisine() {
     const [cuisines, setCuisines] = useState();
+    const navigate = useNavigate();
     useEffect(() => {
         try {
             const info = async () => {
@@ -16,9 +18,14 @@ function Cuisine() {
         }
     }, [])
     return (
-        <div className='cuisine-cards' >
+        <div className='cuisine_cards' >
             {cuisines?.map((cuisine, index) => (
-                <div className="cuisine-card" key={index}>
+                <div className="cuisine_card"
+                    key={index}
+                    onClick={() => {
+                        navigate(`${cuisine.strArea}/food`)
+                    }}
+                >
                     <h3>{cuisine.strArea}</h3>
                 </div>
             ))}
