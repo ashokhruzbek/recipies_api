@@ -81,6 +81,13 @@ body {
   padding: 40px 20px;
 }
 
+.loading{
+  margin: 100px auto;
+  display: flex;
+  color: var(--color-primary);
+
+}
+
 .category-card {
   background-color: var(--color-white);
   border-radius: var(--radius);
@@ -88,6 +95,7 @@ body {
   padding: 20px;
   box-shadow: var(--shadow);
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .category-card:hover {
@@ -103,6 +111,40 @@ body {
   gap: 40px;
   flex-wrap: wrap;
   padding: 40px 20px;
+}
+.cuisineFood-cards{
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+}
+.cuisineFood-card{
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  width: 350px;
+  padding: 20px;
+  text-align: center;
+  color: var(--color-primary);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: var(--transition);
+  overflow: hidden;
+  height: 380px;
+}
+.cuisineFood-image{
+  width: 280px;
+  height: 80%;
+  
+}
+.cuisineFood-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--color-accent);
+}
+.cuisineFood-card h3{
+  font-size: 18px;
+  margin-bottom: 4px;
 }
 
 .cuisine_card {

@@ -10,7 +10,7 @@ function Cuisine() {
             const info = async () => {
                 const res = await axios.get(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`)
                 setCuisines(res.data.meals)
-                console.log(res.data);
+                console.log(res.data.meals);
             }
             info();
         } catch (error) {

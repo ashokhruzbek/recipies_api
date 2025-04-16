@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import "../App.css"
 function Category() {
+    // if (!categor || categor.length === 0) {
+    //     return <p className='loading'>Loading...</p>;
+    //   }
     const [categories, setCategories] = useState();
     useEffect(() => {
         try {
