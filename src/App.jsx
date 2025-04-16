@@ -5,9 +5,10 @@ import Category from './pages/Category'
 import CategoryFood from './pages/CategoryFood'
 import Cuisine from './pages/Cuisine'
 import CuisineFood from './pages/CuisineFood'
-import SingleFood from './pages/SingleFood'
+import SingleFood from './pages/Recipes'
 import NotFound from './pages/NotFound'
 import Home from './pages/Home'
+import Recipes from './pages/Recipes'
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
           <Route path='/category/:categoryName/food' element={<CategoryFood />} />
           <Route path='/cuisine' element={<Cuisine />} />
           <Route path='/cuisine/:cuisineName/food' element={<CuisineFood />} />
-          <Route path='/singlefood/:foodName' element={<SingleFood />} />
+          <Route path='/recipes/:foodname' element={<Recipes />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </BrowserRouter>

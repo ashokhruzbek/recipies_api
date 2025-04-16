@@ -4,9 +4,9 @@ import { useNavigate, useParams } from 'react-router-dom'
 function CuisineFood() {
   const [cuisineFoods, setCuisineFoods] = useState(null)
   const navigate = useNavigate();
-  const {cuisineName} = useParams()
+  const { cuisineName } = useParams()
   console.log(cuisineName);
-  
+
 
   useEffect(() => {
     try {
@@ -28,9 +28,9 @@ function CuisineFood() {
     <div className='cuisineFood-cards' >
       {cuisineFoods?.map((cuisineFood) => (
         <div className="cuisineFood-card" key={cuisineFood.idMeal}
-        onClick={() => {
-          navigate(`${cuisineFood.strMeal}/food`)
-      }}
+          onClick={() => {
+            navigate(`/recipes/${cuisineFood.strMeal}`)
+          }}
         >
           <h3>{cuisineFood.strMeal}</h3>
           <img className='cuisineFood-image' src={cuisineFood.strMealThumb} alt="" />
